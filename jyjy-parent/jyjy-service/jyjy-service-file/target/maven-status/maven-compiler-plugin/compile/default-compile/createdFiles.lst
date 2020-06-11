@@ -1,0 +1,4 @@
+com\order\file\util\FastDFSUtil.class
+com\order\file\pojo\FastDFSFile.class
+com\jyjy\FileApplication.class
+com\jyjy\file\controller\FileUploadController.class

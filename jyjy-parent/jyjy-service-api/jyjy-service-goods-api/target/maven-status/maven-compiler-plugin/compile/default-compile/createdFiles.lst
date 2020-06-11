@@ -1,0 +1,4 @@
+com\jyjy\goods\feign\FilterFeign.class
+com\jyjy\goods\feign\GoodsFeign.class
+com\jyjy\goods\pojo\Goods.class
+com\jyjy\goods\pojo\Filter.class

@@ -1,0 +1,17 @@
+com\jyjy\user\dao\XtsMapper.class
+com\jyjy\user\controller\XtsController.class
+com\jyjy\user\service\impl\XtsServiceImpl.class
+com\jyjy\user\service\impl\PlatformServiceImpl.class
+com\jyjy\user\controller\PlatformController.class
+com\jyjy\user\service\PlatformService.class
+com\jyjy\user\dao\PlatformMapper.class
+com\jyjy\user\service\impl\UserServiceImpl.class
+com\jyjy\user\controller\UserController.class
+com\jyjy\user\service\UserService.class
+com\jyjy\user\controller\ShopController.class
+com\jyjy\user\dao\UserMapper.class
+com\jyjy\UserApplication.class
+com\jyjy\user\service\XtsService.class
+com\jyjy\user\dao\ShopMapper.class
+com\jyjy\user\service\impl\ShopServiceImpl.class
+com\jyjy\user\service\ShopService.class

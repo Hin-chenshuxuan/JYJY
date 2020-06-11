@@ -1,0 +1,6 @@
+com\jyjy\order\feign\ConsigneeFeign.class
+com\jyjy\order\pojo\Order.class
+com\jyjy\order\feign\OrderFeign.class
+com\jyjy\order\pojo\Consignee.class
+com\jyjy\order\feign\ComplaintFeign.class
+com\jyjy\order\pojo\Complaint.class

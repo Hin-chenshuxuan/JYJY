@@ -1,0 +1,8 @@
+com\jyjy\user\feign\UserFeign.class
+com\jyjy\user\feign\XtsFeign.class
+com\jyjy\user\pojo\Platform.class
+com\jyjy\user\feign\PlatformFeign.class
+com\jyjy\user\pojo\User.class
+com\jyjy\user\pojo\Shop.class
+com\jyjy\user\pojo\Xts.class
+com\jyjy\user\feign\ShopFeign.class

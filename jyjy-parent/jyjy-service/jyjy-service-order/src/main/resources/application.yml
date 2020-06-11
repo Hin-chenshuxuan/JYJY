@@ -1,0 +1,36 @@
+server:
+  port: 18084
+spring:
+  application:
+    name: order
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:13306/jyjy_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 970701
+  #redis:
+  #  host: 192.168.211.132
+  #  port: 6379
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:18080/eureka
+  instance:
+    prefer-ip-address: true
+#开启Feign熔断:默认是线程池隔离
+feign:
+  hystrix:
+    enabled: true
+#hystrix配置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+          #信号量隔离，去掉的话为线程池隔离
+          strategy: SEMAPHORE

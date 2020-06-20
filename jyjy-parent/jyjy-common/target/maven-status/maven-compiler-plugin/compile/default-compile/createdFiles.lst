@@ -1,7 +1,6 @@
-entity\CacheKey.class
 entity\PageResult.class
 entity\Page.class
-entity\BaseExceptionHandler.class
+entity\HttpClient$1.class
 entity\Result.class
 entity\JwtUtil.class
 entity\RandomValueUtil.class
@@ -9,3 +8,6 @@ entity\Message.class
 entity\ChineseUtils.class
 entity\IdWorker.class
 entity\StatusCode.class
+entity\CacheKey.class
+entity\BaseExceptionHandler.class
+entity\HttpClient.class

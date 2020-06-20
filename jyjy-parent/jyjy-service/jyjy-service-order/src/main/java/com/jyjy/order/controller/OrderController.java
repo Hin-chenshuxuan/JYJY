@@ -97,7 +97,7 @@ public class OrderController {
      */
     @ApiOperation(value = "Order根据ID删除",notes = "根据ID删除Order方法详情",tags = {"OrderController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用OrderService实现根据主键删除
         orderService.delete(id);
@@ -112,7 +112,7 @@ public class OrderController {
      */
     @ApiOperation(value = "Order根据ID修改",notes = "根据ID修改Order方法详情",tags = {"OrderController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Order对象",value = "传入JSON数据",required = false) Order order,@PathVariable Integer id){
         //设置主键值
         order.setId(id);

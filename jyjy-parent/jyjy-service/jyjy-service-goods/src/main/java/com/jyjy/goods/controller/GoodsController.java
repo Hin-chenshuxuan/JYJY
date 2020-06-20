@@ -82,7 +82,7 @@ public class GoodsController {
      */
     @ApiOperation(value = "修图服务商品根据ID删除",notes = "根据ID删除修图服务商品方法详情",tags = {"GoodsController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用GoodsService实现根据主键删除
         goodsService.delete(id);
@@ -97,7 +97,7 @@ public class GoodsController {
      */
     @ApiOperation(value = "修图服务商品根据ID修改",notes = "根据ID修改修图服务商品方法详情",tags = {"GoodsController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Goods对象",value = "传入JSON数据",required = false) Goods goods,@PathVariable Integer id){
         //设置主键值
         goods.setId(id);

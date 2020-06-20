@@ -95,7 +95,7 @@ public class FilterController {
      */
     @ApiOperation(value = "滤镜根据ID删除",notes = "根据ID删除滤镜方法详情",tags = {"FilterController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用FilterService实现根据主键删除
         filterService.delete(id);
@@ -110,7 +110,7 @@ public class FilterController {
      */
     @ApiOperation(value = "滤镜根据ID修改",notes = "根据ID修改滤镜方法详情",tags = {"FilterController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Filter对象",value = "传入JSON数据",required = false) Filter filter,@PathVariable Integer id){
         //设置主键值
         filter.setId(id);

@@ -82,7 +82,7 @@ public class PlatformController {
      */
     @ApiOperation(value = "Platform根据ID删除",notes = "根据ID删除Platform方法详情",tags = {"PlatformController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用PlatformService实现根据主键删除
         platformService.delete(id);
@@ -97,7 +97,7 @@ public class PlatformController {
      */
     @ApiOperation(value = "Platform根据ID修改",notes = "根据ID修改Platform方法详情",tags = {"PlatformController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Platform对象",value = "传入JSON数据",required = false) Platform platform,@PathVariable Integer id){
         //设置主键值
         platform.setId(id);

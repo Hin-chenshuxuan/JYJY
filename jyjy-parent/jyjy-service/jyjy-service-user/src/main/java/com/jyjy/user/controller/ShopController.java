@@ -82,7 +82,7 @@ public class ShopController {
      */
     @ApiOperation(value = "Shop根据ID删除",notes = "根据ID删除Shop方法详情",tags = {"ShopController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用ShopService实现根据主键删除
         shopService.delete(id);
@@ -97,7 +97,7 @@ public class ShopController {
      */
     @ApiOperation(value = "Shop根据ID修改",notes = "根据ID修改Shop方法详情",tags = {"ShopController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Shop对象",value = "传入JSON数据",required = false) Shop shop,@PathVariable Integer id){
         //设置主键值
         shop.setId(id);

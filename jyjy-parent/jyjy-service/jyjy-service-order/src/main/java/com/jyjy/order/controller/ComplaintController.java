@@ -82,7 +82,7 @@ public class ComplaintController {
      */
     @ApiOperation(value = "投诉根据ID删除",notes = "根据ID删除投诉方法详情",tags = {"ComplaintController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用ComplaintService实现根据主键删除
         complaintService.delete(id);
@@ -97,7 +97,7 @@ public class ComplaintController {
      */
     @ApiOperation(value = "投诉根据ID修改",notes = "根据ID修改投诉方法详情",tags = {"ComplaintController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Complaint对象",value = "传入JSON数据",required = false) Complaint complaint,@PathVariable Integer id){
         //设置主键值
         complaint.setId(id);

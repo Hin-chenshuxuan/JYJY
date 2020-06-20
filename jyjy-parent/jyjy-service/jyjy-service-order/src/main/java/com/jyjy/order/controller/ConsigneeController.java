@@ -82,7 +82,7 @@ public class ConsigneeController {
      */
     @ApiOperation(value = "收货人信息根据ID删除",notes = "根据ID删除收货人信息方法详情",tags = {"ConsigneeController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @DeleteMapping(value = "/{id}" )
+    @GetMapping(value = "/delete/{id}" )
     public Result delete(@PathVariable Integer id){
         //调用ConsigneeService实现根据主键删除
         consigneeService.delete(id);
@@ -97,7 +97,7 @@ public class ConsigneeController {
      */
     @ApiOperation(value = "收货人信息根据ID修改",notes = "根据ID修改收货人信息方法详情",tags = {"ConsigneeController"})
     @ApiImplicitParam(paramType = "path", name = "id", value = "主键ID", required = true, dataType = "Integer")
-    @PutMapping(value="/{id}")
+    @PostMapping(value="/update/{id}")
     public Result update(@RequestBody @ApiParam(name = "Consignee对象",value = "传入JSON数据",required = false) Consignee consignee,@PathVariable Integer id){
         //设置主键值
         consignee.setId(id);

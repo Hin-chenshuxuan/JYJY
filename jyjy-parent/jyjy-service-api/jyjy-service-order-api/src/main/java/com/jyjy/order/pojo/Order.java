@@ -1,5 +1,7 @@
 package com.jyjy.order.pojo;
 
+import com.jyjy.goods.pojo.Filter;
+import com.jyjy.goods.pojo.Goods;
 import com.jyjy.user.pojo.User;
 import com.jyjy.user.pojo.Xts;
 import io.swagger.annotations.ApiModel;
@@ -116,6 +118,12 @@ public class Order implements Serializable{
     @Column(name = "update_time")
 	private Date updateTime;//
 
+	//滤镜信息
+	@ApiModelProperty(value = "滤镜信息",required = false)
+	private Filter filter;
+	//商品信息
+	@ApiModelProperty(value = "商品信息",required = false)
+	private Goods goods;
 	//用户信息
 	@ApiModelProperty(value = "用户信息",required = false)
 	private User userInfo;
@@ -363,5 +371,21 @@ public class Order implements Serializable{
 
 	public void setJtsInfo(Xts jtsInfo) {
 		this.jtsInfo = jtsInfo;
+	}
+
+	public Filter getFilter() {
+		return filter;
+	}
+
+	public void setFilter(Filter filter) {
+		this.filter = filter;
+	}
+
+	public Goods getGoods() {
+		return goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
 	}
 }

@@ -466,7 +466,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void add(Order order){
         //滤镜商品
-        if(order.getOrderType().equals("1")){
+        if(order.getOrderType().equals("0")){
             Result<Filter> filter = filterFeign.findById(order.getConnectId()); //滤镜商品对象
             Double filterPrice = Double.valueOf(filter.getData().getPrice()); //滤镜商品价格
             Double subPrice = filterPrice;
@@ -479,7 +479,7 @@ public class OrderServiceImpl implements OrderService {
             order.setTotalPrice(totalPrice.toString());
         }
         //修图服务商品
-        if(order.getOrderType().equals("2")){
+        if(order.getOrderType().equals("1")){
             Result<Goods> goods = goodsFeign.findById(order.getConnectId());
             Double goodsPrice = Double.valueOf(goods.getData().getPrice());
             Integer goodsNum = goods.getData().getAmount();
@@ -564,10 +564,19 @@ public class OrderServiceImpl implements OrderService {
         }
         return orders;
     }
+
     /**
-     * Order查询并添加用户、修图师、鉴图师信息
+     * Order查询并添加滤镜/商品、用户、修图师、鉴图师信息
      */
     private void getOrderPro(Order order) {
+        if(order.getOrderType().equals("0")&&!StringUtils.isEmpty(order.getConnectId())){
+            Result<Filter> filter = filterFeign.findById(order.getConnectId());
+            order.setFilter(filter.getData());
+        }
+        if(order.getOrderType().equals("1")&&!StringUtils.isEmpty(order.getConnectId())){
+            Result<Goods> goods = goodsFeign.findById(order.getConnectId());
+            order.setGoods(goods.getData());
+        }
         if(!StringUtils.isEmpty(order.getUserId())) {
             Result<User> user = userFeign.findById(order.getUserId());
             order.setUserInfo(user.getData());

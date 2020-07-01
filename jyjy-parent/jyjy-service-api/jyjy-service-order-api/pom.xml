@@ -23,6 +23,13 @@
             <artifactId>jyjy-service-user-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.jyjy</groupId>
+            <artifactId>jyjy-service-goods-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 
